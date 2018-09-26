@@ -9,7 +9,5 @@ keywords = ["box", "alloc", "dst", "stack", "no_std"]
 license = "MIT"
 
 [features]
-default = ["std"]
-std = ["heap"]
-heap = []
-unsize = []
+
+

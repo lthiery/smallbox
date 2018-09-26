@@ -168,16 +168,7 @@
 //! # }
 //! ```
 
-#![cfg_attr(feature = "unsize", feature(unsize))]
-#![cfg_attr(all(not(feature = "std"), doctest), no_std)]
-#![cfg_attr(all(feature = "heap", not(feature = "std")), feature(alloc))]
-
-#[cfg(not(any(feature = "heap", feature = "unsize")))]
-compile_error!("Either feature \"heap\" or \"unsize\" must be enabled for this crate.");
-
-#[cfg(all(feature = "heap", not(feature = "std")))]
-extern crate alloc;
-#[cfg(all(not(feature = "std"), doctest))]
+#![no_std]
 extern crate core as std;
 
 #[cfg(feature = "heap")]
